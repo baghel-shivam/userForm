@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .main-box{
+            height: 150vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            background: url(	https://aapkapainter.com/assets/newdesign/resized/loader_bg.webp);
+        }
+        .logo-img{
+            height: 70px;
+            width: 230px;
+            background-color:rgb(215, 213, 213);
+            border-radius: 0px 0px 12px 0px;
+
+           
+
+
+
+        }
+        .logo-img img{
+            height: 70%;
+            width: 92%;
+            position: relative;
+            top: 8px;
+            left: 5px;
+
+        }
+        
+        .main-area{
+            display: flex;
+            /* margin: 50px 20px; */
+
+            width: 100%;
+            /* margin: auto 0px; */
+        }
+        .left-area{
+            display: flex;
+            width: 60%;
+            margin: 100px 40px;
+            flex-direction: column;
+
+            
+        }
+        .heading h1{
+            width: 100%;
+            margin: 5px auto  15px auto;
+            text-align: center;
+            font-size: 28px;
+            color: white;
+
+        }
+        .imgs{
+            display: flex;
+            
+
+
+        }
+        .img-style{
+            width: 100%;
+            height: 40px;
+            margin: auto;
+        }
+        .img-style img{
+            width: 62%;
+            height: 120px;
+            margin: auto;
+        }
+        .text{
+            color: white;
+            width: auto;
+            position: relative;
+            left: -8px;
+            top: 5px;
+        }
+        .right-area{
+            width: 40%;
+            text-align: center;
+            
+        }
+        .form-area{
+            border-radius: 18px;
+            width: 78%;
+            background: white;
+            height: auto;
+
+            padding: 20px;
+        }
+        .form-heading{
+            color: rgb(43, 43, 43);
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+        .lines{
+            font-style: italic;
+            font-size: 16px;
+            color: rgb(111, 110, 110);
+            margin-bottom: 10px;
+
+        }
+        .form-heading-2{
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        .input-style{
+            text-align: left;
+        }
+        .input-style-area{
+            width: 90%;
+            height: 40px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-left: 22px;
+        }
+        .label-style{
+            position: relative;
+            top: 8px;
+            left: 53px;
+            color: #323252;
+            width: 40px;
+            background: white;
+
+        }
+        .big-text{
+            width: 127px;
+        }
+        .area-label{
+            width: 82px;
+        }
+        .house-label{
+            width: 102px;
+        }
+            
+        .submit-btn button{
+            background: #e04960!important;
+            padding: 4%!important;
+            color: #fff!important;
+            border-radius: 30px!important;
+            font-size: 14px!important;
+            font-weight: 700;
+            width: 50%;
+            box-shadow: black;
+            border: none;
+            margin-top: 20px;
+            letter-spacing: .5px;
+        }
+        .submit-btn button:hover{
+            cursor: pointer;
+            transform: scale(1.02);
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="main-box">
+        <div class="logo-img">
+            <img src="https://aapkapainter.com/assets/newdesign/resized/aapka_logo.webp" alt="loding...">
+        </div>
+
+        <div class="main-area">
+            <div class="left-area">
+                <div class="heading">
+                    <h1>Our Promises</h1>
+                </div>
+                <div class="imgs">
+                    <div class="img-style">
+                        <img src="https://aapkapainter.com/assets/newdesign/resized/expert%20painters&%20designers.webp"
+                            alt="">
+                            <div class="text">Safe Painting Service</div>
+                    </div>
+                    <div class="img-style">
+                        <img src="https://aapkapainter.com/assets/newdesign/resized/End%20to%20end.webp"
+                            alt="">
+                            <div class="text">End to End Service</div>
+                    </div>
+                    <div class="img-style">
+                        <img src="https://aapkapainter.com/assets/newdesign/resized/Project%20manager.webp"
+                            alt="">
+                            <div class="text">Dedicated Project Manager</div>
+                    </div>
+                    <div class="img-style">
+                        <img src="https://aapkapainter.com/assets/newdesign/resized/Professional%20Execution.webp"
+                            alt="">
+                            <div class="text">Professional Execution</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right-area">
+                <div class="form-area">
+                    <div class="form-heading">
+                        <h1>Book Site Visit</h1>
+                    </div>
+                    <div class="lines">
+                        Share your address and the preferred date and time <br>to fix a slot for free! Our experts will
+                        visit you soon.
+
+
+                    </div>
+                    <div class="form-heading-2">
+                        <h3>Adjust Your House Location</h3>
+                    </div>
+
+                    <form action="{% url 'saveuser' %}"  method="post" class="input-area">
+                        {% csrf_token %}
+                        <div class="input-style">
+                            <div class="label-style">
+                                <label  for="pin">Pincode*</label>
+                                
+                            </div>
+                            <input class="input-style-area" type="text" id="pin" name="pin">
+
+                        </div>
+                        <div class="input-style">
+                            <div class="label-style house-label ">
+                                <label  for="house">House/Flat No*</label>
+                                
+                            </div>
+                            <input class="input-style-area" type="text" id="house" name="house">
+
+                        </div>
+                        <div class="input-style">
+                            <div class="label-style">
+                                <label  for="apartment">Apartment</label>
+                                
+                            </div>
+                            <input class="input-style-area" type="text" id="apartment" name="apartment">
+
+                        </div>
+                        <div class="input-style">
+                            <div class="label-style area-label">
+                                <label  for="area">Area Name*</label>
+                                
+                            </div>
+                            <input class="input-style-area" type="text" id="area" name="area">
+
+                        </div>
+                        <div class="input-style">
+                            <div class="label-style big-text">
+                                <label  for="landmark">Nearest Landmark*</label>
+                                
+                            </div>
+                            <input class="input-style-area" type="text" id="landmark" name="landmark">
+
+                        </div>
+                        <div class="input-style">
+                            <label class="label-style"  for="visit">Visit Date*</label>
+                            <input class="input-style-area" type="date" id="visit" name="visit">
+
+                        </div>
+                        <div class="submit-btn">
+                            <button type="submit" value="submit" onclick="info()">Proceed</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function info(){
+            alert("Form Submitted")
+            console.log("HEllo")
+        }
+    </script>
+
+
+</body>
+
+</html>
